@@ -23,8 +23,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         tabbarCollectionView.delegate = self
         tabbarCollectionView.dataSource = self
-                getApiResponse()
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        getApiResponse()
         let url = Constants.ALBUMID_URL+"\(2)"
         getApiResponseforImage(url)
         
