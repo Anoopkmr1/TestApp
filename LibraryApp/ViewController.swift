@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tabScrollView: TabScrollView!
+    
+    @IBOutlet weak var tabbarCollectionView: UICollectionView!
     
     var responseData = [DataResponse]()
     var albumIdResponse = [LibraryResponse]()
@@ -21,7 +22,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         title = "Library App"
         collectionView.delegate = self
         collectionView.dataSource = self
-        //        getApiResponse()
+        tabbarCollectionView.delegate = self
+        tabbarCollectionView.dataSource = self
+                getApiResponse()
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         let url = Constants.ALBUMID_URL+"\(2)"
         getApiResponseforImage(url)
@@ -29,28 +32,48 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albumIdResponse.count
+        if collectionView == self.collectionView {
+            return albumIdResponse.count
+        } else if collectionView == self.tabbarCollectionView {
+            return responseData.count
+        }
+      return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LibraryCollectionViewCell", for: indexPath) as! LibraryCollectionViewCell
-        let thumburl = albumIdResponse[indexPath.row].url
-        ImageDownloader().imageForCollection(url: thumburl) { image in
-            cell.libraryImage.image = image
+        if collectionView == self.collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LibraryCollectionViewCell", for: indexPath) as! LibraryCollectionViewCell
+            let thumburl = albumIdResponse[indexPath.row].url
+            ImageDownloader().imageForCollection(url: thumburl) { image in
+                cell.libraryImage.image = image
+            }
+            return cell
+        } else {
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "TabbarCollectionViewCell", for: indexPath) as! TabbarCollectionViewCell
+            let data = responseData[indexPath.row].title
+            cellB.nameLbl.text = data
+            return cellB
         }
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailsViewController", sender: self)
+        if collectionView == self.collectionView{
+            performSegue(withIdentifier: "DetailsViewController", sender: self)
+        } else if collectionView == self.tabbarCollectionView {
+            let id = responseData[indexPath.row].id
+            let url = Constants.ALBUMID_URL+"\(id)"
+            print("anoopUrl:\(url)")
+            print("Anoop_index:\(indexPath)")
+            getApiResponseforImage(url)
+        }
     }
     
-//    func getApiResponse() {
-//        APIService().getData { response in
-//            self.responseData = response
-//            self.collectionView.reloadData()
-//        }
-//    }
+    func getApiResponse() {
+        APIService.shared.getData { response in
+            self.responseData = response
+            self.tabbarCollectionView.reloadData()
+        }
+    }
     
     func getApiResponseforImage(_ url: String) {
         APIService.shared.getAlbumIdResponse(url) { [self] response in

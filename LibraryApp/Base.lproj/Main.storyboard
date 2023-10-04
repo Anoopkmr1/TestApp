@@ -56,27 +56,60 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-tf-NZx" customClass="TabScrollView" customModule="LibraryApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="103" width="393" height="205"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7jY-A6-J5g">
+                                <rect key="frame" x="0.0" y="103" width="393" height="185"/>
                                 <color key="backgroundColor" red="0.47450980390000003" green="0.4941176471" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </scrollView>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zO8-49-XZr">
+                                    <size key="itemSize" width="100" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="TabbarCollectionViewCell" id="i4t-iU-IyC" customClass="TabbarCollectionViewCell" customModule="LibraryApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="45" height="20.333333333333329"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JHb-xi-1JW">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="20.333333333333329"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmc-Ir-E6s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Gmc-Ir-E6s" secondAttribute="bottom" id="6WO-o8-koy"/>
+                                                <constraint firstItem="Gmc-Ir-E6s" firstAttribute="top" secondItem="JHb-xi-1JW" secondAttribute="top" id="bKk-oD-TER"/>
+                                                <constraint firstItem="Gmc-Ir-E6s" firstAttribute="leading" secondItem="JHb-xi-1JW" secondAttribute="leading" id="vbf-WH-7Y2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gmc-Ir-E6s" secondAttribute="trailing" id="xnk-nZ-kiG"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="Gmc-Ir-E6s" id="1dC-GM-cLJ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qx5-bP-GiT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0dL-9o-72W"/>
-                            <constraint firstItem="qx5-bP-GiT" firstAttribute="top" secondItem="tSV-tf-NZx" secondAttribute="bottom" constant="10" id="2Dw-Hq-p2n"/>
+                            <constraint firstItem="7jY-A6-J5g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Hu-N2-6BL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qx5-bP-GiT" secondAttribute="bottom" id="F4p-Uv-5gc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tSV-tf-NZx" secondAttribute="trailing" id="M7W-JI-7T2"/>
-                            <constraint firstItem="tSV-tf-NZx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZiM-br-EVf"/>
+                            <constraint firstItem="7jY-A6-J5g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NBB-sB-kpi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7jY-A6-J5g" secondAttribute="trailing" id="Qm6-yw-sgh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qx5-bP-GiT" secondAttribute="trailing" id="jbx-HO-0Sx"/>
-                            <constraint firstItem="tSV-tf-NZx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yFS-OZ-CFM"/>
+                            <constraint firstItem="qx5-bP-GiT" firstAttribute="top" secondItem="7jY-A6-J5g" secondAttribute="bottom" constant="30" id="sBj-56-rdh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PNY-hB-9lt"/>
                     <connections>
                         <outlet property="collectionView" destination="qx5-bP-GiT" id="AeV-Ft-OsS"/>
-                        <outlet property="tabScrollView" destination="tSV-tf-NZx" id="iof-4r-iPQ"/>
+                        <outlet property="tabbarCollectionView" destination="7jY-A6-J5g" id="jv7-cI-Eg8"/>
                         <segue destination="W6k-b2-Hue" kind="show" identifier="DetailsViewController" id="iWm-4T-1vX"/>
                     </connections>
                 </viewController>

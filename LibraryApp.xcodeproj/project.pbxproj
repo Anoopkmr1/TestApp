@@ -23,6 +23,8 @@
 		6ED7030A2ACCA5C400A75367 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703092ACCA5C400A75367 /* Constants.swift */; };
 		6ED7030C2ACD0BA700A75367 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7030B2ACD0BA700A75367 /* ImageDownloader.swift */; };
 		6ED703102ACD324C00A75367 /* TabScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7030F2ACD324C00A75367 /* TabScrollView.swift */; };
+		6ED703122ACD3C2D00A75367 /* filterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703112ACD3C2D00A75367 /* filterView.swift */; };
+		6ED703142ACD5EE500A75367 /* TabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703132ACD5EE500A75367 /* TabbarCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		6ED703092ACCA5C400A75367 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6ED7030B2ACD0BA700A75367 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		6ED7030F2ACD324C00A75367 /* TabScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollView.swift; sourceTree = "<group>"; };
+		6ED703112ACD3C2D00A75367 /* filterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterView.swift; sourceTree = "<group>"; };
+		6ED703132ACD5EE500A75367 /* TabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			children = (
 				6ED703062ACC94AA00A75367 /* LibraryCollectionViewCell.swift */,
 				6ED7030F2ACD324C00A75367 /* TabScrollView.swift */,
+				6ED703112ACD3C2D00A75367 /* filterView.swift */,
+				6ED703132ACD5EE500A75367 /* TabbarCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 				6ED7030A2ACCA5C400A75367 /* Constants.swift in Sources */,
 				6ED7030C2ACD0BA700A75367 /* ImageDownloader.swift in Sources */,
 				6ED703102ACD324C00A75367 /* TabScrollView.swift in Sources */,
+				6ED703142ACD5EE500A75367 /* TabbarCollectionViewCell.swift in Sources */,
 				6ED702FD2ACC54B000A75367 /* APIService.swift in Sources */,
 				6ED703012ACC597B00A75367 /* DataResponse.swift in Sources */,
 				6ED702E42ACC477D00A75367 /* SceneDelegate.swift in Sources */,
 				6ED703032ACC59FF00A75367 /* LibraryResponse.swift in Sources */,
+				6ED703122ACD3C2D00A75367 /* filterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

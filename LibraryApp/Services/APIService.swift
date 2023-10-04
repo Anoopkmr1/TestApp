@@ -42,30 +42,27 @@ class APIService: NSObject {
     }
     
     
-    //    var resultData = [DataResponse]()
         
-    //    func getData(completion:@escaping([DataResponse]) -> Void) {
-    //        let url = Constants.ALBUM_URL
-    //        let UrlString = URL(string: url)
-    //        let urlRequest = URLSession.shared
-    //
-    //        let task = urlRequest.dataTask(with: UrlString!) { [self] data, response, error in
-    //            if error != nil {
-    //                print("Error:\(error?.localizedDescription)")
-    //            }
-    //            do {
-    //                var resultData: [DataResponse]?
-    //                let decoder = JSONDecoder()
-    //                let result = try decoder.decode([DataResponse].self, from: data!)
-    //                resultData = result
-    //                DispatchQueue.main.async {
-    //                    completion(resultData!)
-    //                }
-    //            } catch {
-    //                print("Anoop_error")
-    //            }
-    //        }
-    //        task.resume()
-    //    }
+        func getData(completion:@escaping([DataResponse]) -> Void) {
+            let url = Constants.ALBUM_URL
+            let UrlString = URL(string: url)
+            let urlRequest = URLSession.shared
+    
+            let task = urlRequest.dataTask(with: UrlString!) { [self] data, response, error in
+                if error != nil {
+                    print("Error:\(error?.localizedDescription)")
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    let result = try decoder.decode([DataResponse].self, from: data!)
+                    DispatchQueue.main.async {
+                        completion(result)
+                    }
+                } catch {
+                    print("Anoop_error")
+                }
+            }
+            task.resume()
+        }
 
 }
