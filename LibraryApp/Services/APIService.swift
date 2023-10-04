@@ -19,50 +19,25 @@ class APIService: NSObject {
         super.init()
     }
 
-    func getAlbumIdResponse(_ url: String, completion:@escaping([LibraryResponse]) -> ()) {
-        let UrlString = URL(string: url)
-        let urlRequest = URLSession.shared
-        
-        let task = urlRequest.dataTask(with: UrlString!) { data, response, error in
-            if error != nil {
-                print("Error:\(error?.localizedDescription)")
-            }
-            do {
-                //  var resultData: [LibraryResponse]?
+    
+    func getApiData<T:Decodable>(requestUrl: URL, resultType: T.Type, completionHandler:@escaping(_ result: T)-> Void) {
+        URLSession.shared.dataTask(with: requestUrl) { (responseData, httpUrlResponse, error) in
+            if(error == nil && responseData != nil && responseData?.count != 0)
+            {
+                //parse the responseData here
                 let decoder = JSONDecoder()
-                let result = try decoder.decode([LibraryResponse].self, from: data!)
-                DispatchQueue.main.async {
-                    completion(result)
-                }
-            } catch {
-                print("Anoop_error")
-            }
-        }
-        task.resume()
-    }
-    
-    
-        
-        func getData(completion:@escaping([DataResponse]) -> Void) {
-            let url = Constants.ALBUM_URL
-            let UrlString = URL(string: url)
-            let urlRequest = URLSession.shared
-    
-            let task = urlRequest.dataTask(with: UrlString!) { [self] data, response, error in
-                if error != nil {
-                    print("Error:\(error?.localizedDescription)")
-                }
                 do {
-                    let decoder = JSONDecoder()
-                    let result = try decoder.decode([DataResponse].self, from: data!)
+                    let result = try decoder.decode(T.self, from: responseData!)
                     DispatchQueue.main.async {
-                        completion(result)
+                        _=completionHandler(result)
                     }
-                } catch {
-                    print("Anoop_error")
+                }
+                catch let error{
+                    debugPrint("error occured while decoding = \(error.localizedDescription)")
                 }
             }
-            task.resume()
-        }
+            
+        }.resume()
+    }
 
 }

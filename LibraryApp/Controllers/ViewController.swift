@@ -62,22 +62,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else if collectionView == self.tabbarCollectionView {
             let id = responseData[indexPath.row].id
             let url = Constants.ALBUMID_URL+"\(id)"
-            print("anoopUrl:\(url)")
-            print("Anoop_index:\(indexPath)")
             getApiResponseforImage(url)
         }
     }
     
     func getApiResponse() {
-        APIService.shared.getData { response in
-            self.responseData = response
+        let url = URL(string: Constants.ALBUM_URL)
+        APIService.shared.getApiData(requestUrl: url!, resultType: [DataResponse].self) { result in
+            self.responseData = result
             self.tabbarCollectionView.reloadData()
         }
     }
     
     func getApiResponseforImage(_ url: String) {
-        APIService.shared.getAlbumIdResponse(url) { [self] response in
-            self.albumIdResponse = response
+        let url = URL(string: url)
+        APIService.shared.getApiData(requestUrl: url!, resultType: [LibraryResponse].self) { result in
+            self.albumIdResponse = result
             self.collectionView.reloadData()
         }
     }
