@@ -14,6 +14,15 @@
 		6ED702EC2ACC477D00A75367 /* LibraryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6ED702EA2ACC477D00A75367 /* LibraryApp.xcdatamodeld */; };
 		6ED702EE2ACC477F00A75367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED702ED2ACC477F00A75367 /* Assets.xcassets */; };
 		6ED702F12ACC477F00A75367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED702EF2ACC477F00A75367 /* LaunchScreen.storyboard */; };
+		6ED702FD2ACC54B000A75367 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED702FC2ACC54B000A75367 /* APIService.swift */; };
+		6ED702FF2ACC57B800A75367 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED702FE2ACC57B800A75367 /* DetailsViewController.swift */; };
+		6ED703012ACC597B00A75367 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703002ACC597B00A75367 /* DataResponse.swift */; };
+		6ED703032ACC59FF00A75367 /* LibraryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703022ACC59FF00A75367 /* LibraryResponse.swift */; };
+		6ED703052ACC5CB600A75367 /* hero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ED703042ACC5CB600A75367 /* hero.jpg */; };
+		6ED703072ACC94AA00A75367 /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703062ACC94AA00A75367 /* LibraryCollectionViewCell.swift */; };
+		6ED7030A2ACCA5C400A75367 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED703092ACCA5C400A75367 /* Constants.swift */; };
+		6ED7030C2ACD0BA700A75367 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7030B2ACD0BA700A75367 /* ImageDownloader.swift */; };
+		6ED703102ACD324C00A75367 /* TabScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED7030F2ACD324C00A75367 /* TabScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		6ED702ED2ACC477F00A75367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ED702F02ACC477F00A75367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ED702F22ACC477F00A75367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED702FC2ACC54B000A75367 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		6ED702FE2ACC57B800A75367 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		6ED703002ACC597B00A75367 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		6ED703022ACC59FF00A75367 /* LibraryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryResponse.swift; sourceTree = "<group>"; };
+		6ED703042ACC5CB600A75367 /* hero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hero.jpg; sourceTree = "<group>"; };
+		6ED703062ACC94AA00A75367 /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		6ED703092ACCA5C400A75367 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6ED7030B2ACD0BA700A75367 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		6ED7030F2ACD324C00A75367 /* TabScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,7 @@
 		6ED702D52ACC477D00A75367 = {
 			isa = PBXGroup;
 			children = (
+				6ED703042ACC5CB600A75367 /* hero.jpg */,
 				6ED702E02ACC477D00A75367 /* LibraryApp */,
 				6ED702DF2ACC477D00A75367 /* Products */,
 			);
@@ -58,8 +77,14 @@
 		6ED702E02ACC477D00A75367 /* LibraryApp */ = {
 			isa = PBXGroup;
 			children = (
+				6ED7030E2ACD0D9400A75367 /* Cell */,
+				6ED7030D2ACD0D8000A75367 /* Helper */,
+				6ED703082ACCA5B500A75367 /* Constants */,
+				6ED702F92ACC4B4600A75367 /* Model */,
+				6ED702F82ACC4B3000A75367 /* Services */,
 				6ED702E12ACC477D00A75367 /* AppDelegate.swift */,
 				6ED702E32ACC477D00A75367 /* SceneDelegate.swift */,
+				6ED702FE2ACC57B800A75367 /* DetailsViewController.swift */,
 				6ED702E52ACC477D00A75367 /* ViewController.swift */,
 				6ED702E72ACC477D00A75367 /* Main.storyboard */,
 				6ED702ED2ACC477F00A75367 /* Assets.xcassets */,
@@ -68,6 +93,48 @@
 				6ED702EA2ACC477D00A75367 /* LibraryApp.xcdatamodeld */,
 			);
 			path = LibraryApp;
+			sourceTree = "<group>";
+		};
+		6ED702F82ACC4B3000A75367 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6ED702FC2ACC54B000A75367 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6ED702F92ACC4B4600A75367 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6ED703002ACC597B00A75367 /* DataResponse.swift */,
+				6ED703022ACC59FF00A75367 /* LibraryResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6ED703082ACCA5B500A75367 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6ED703092ACCA5C400A75367 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6ED7030D2ACD0D8000A75367 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6ED7030B2ACD0BA700A75367 /* ImageDownloader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6ED7030E2ACD0D9400A75367 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6ED703062ACC94AA00A75367 /* LibraryCollectionViewCell.swift */,
+				6ED7030F2ACD324C00A75367 /* TabScrollView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED702F12ACC477F00A75367 /* LaunchScreen.storyboard in Resources */,
+				6ED703052ACC5CB600A75367 /* hero.jpg in Resources */,
 				6ED702EE2ACC477F00A75367 /* Assets.xcassets in Resources */,
 				6ED702E92ACC477D00A75367 /* Main.storyboard in Resources */,
 			);
@@ -142,9 +210,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED702E62ACC477D00A75367 /* ViewController.swift in Sources */,
+				6ED703072ACC94AA00A75367 /* LibraryCollectionViewCell.swift in Sources */,
 				6ED702EC2ACC477D00A75367 /* LibraryApp.xcdatamodeld in Sources */,
 				6ED702E22ACC477D00A75367 /* AppDelegate.swift in Sources */,
+				6ED702FF2ACC57B800A75367 /* DetailsViewController.swift in Sources */,
+				6ED7030A2ACCA5C400A75367 /* Constants.swift in Sources */,
+				6ED7030C2ACD0BA700A75367 /* ImageDownloader.swift in Sources */,
+				6ED703102ACD324C00A75367 /* TabScrollView.swift in Sources */,
+				6ED702FD2ACC54B000A75367 /* APIService.swift in Sources */,
+				6ED703012ACC597B00A75367 /* DataResponse.swift in Sources */,
 				6ED702E42ACC477D00A75367 /* SceneDelegate.swift in Sources */,
+				6ED703032ACC59FF00A75367 /* LibraryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2UMVKA3VBA;
+				DEVELOPMENT_TEAM = 7FR7T98PVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -319,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2UMVKA3VBA;
+				DEVELOPMENT_TEAM = 7FR7T98PVQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
