@@ -51,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "TabbarCollectionViewCell", for: indexPath) as! TabbarCollectionViewCell
             let data = responseData[indexPath.row].title
-            cellB.nameLbl.text = data
+            cellB.nameLbl.text = data.components(separatedBy: " ").first
             return cellB
         }
     }
@@ -61,6 +61,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             performSegue(withIdentifier: "DetailsViewController", sender: self)
         } else if collectionView == self.tabbarCollectionView {
             let id = responseData[indexPath.row].id
+            let title = responseData[indexPath.row].title
+            print("Anoop_title:\(title)")
             let url = Constants.ALBUMID_URL+"\(id)"
             getApiResponseforImage(url)
         }
@@ -101,7 +103,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         newsDetailsVC.lastName = thumburl.url
         newsDetailsVC.descriptionString = thumburl.title
     }
-    
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {

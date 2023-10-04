@@ -22,8 +22,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
-       
+        
         firstName.text = lastName
         descriptionLbl.text = descriptionString
         dateLbl.text = "\(Date())"
