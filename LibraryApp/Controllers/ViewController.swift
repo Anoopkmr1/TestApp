@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var tabbarCollectionView: UICollectionView!
     
     var responseData = [DataResponse]()

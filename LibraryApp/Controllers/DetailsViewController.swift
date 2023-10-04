@@ -11,7 +11,6 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     
